@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>RPiPicoWPower</title>
+    </head>
+    <body>
+        <button onClick="on()">On</button>
+        <button onClick="off()">Off</button>
+
+        <script>
+            function on() {
+                let request = new XMLHttpRequest();
+                request.open("POST", "/api/on", true);
+                request.send();
+            }
+            function off() {
+                let request = new XMLHttpRequest();
+                request.open("POST", "/api/off", true);
+                request.send();
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,17 @@
+version: "3.3"
+name: rpipicowpower
+services:
+  node:
+    build:
+      context: ./app
+    env_file:
+      - .env
+      - .env.override
+    ports:
+      - "3000:3000"
+  nginx:
+    restart: always
+    build:
+      context: ./web
+    ports:
+      - "8088:80"
